@@ -55,6 +55,8 @@ Nel prompt dei comandi di Windows:
 build_exe.bat
 ```
 
+Lo script ora si interrompe al primo errore e mostra un messaggio chiaro se una dipendenza non si installa.
+
 Al termine troverai l'eseguibile in:
 
 - `dist\ConvertitoreCSV.exe`
@@ -65,8 +67,14 @@ Al termine troverai l'eseguibile in:
 py -m venv .venv
 call .venv\Scripts\activate
 pip install -r requirements.txt
-pyinstaller --noconfirm --onefile --windowed --name ConvertitoreCSV converter_gui.py
+python -m PyInstaller --noconfirm --onefile --windowed --name ConvertitoreCSV converter_gui.py
 ```
+
+### Risoluzione problemi build su Windows
+
+- Se vedi errori `meson`/`vswhere.exe` durante l'installazione di `pandas`, significa che `pip` sta tentando una compilazione da sorgente.
+- Con le dipendenze attuali, usa preferibilmente Python 3.10-3.12 oppure aggiorna `pip` e riprova con lo script.
+- Lo script usa `python -m PyInstaller`, quindi non dipende da `pyinstaller` nel `PATH`.
 
 ## Note sulla conversione
 
