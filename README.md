@@ -73,7 +73,7 @@ python -m PyInstaller --noconfirm --onefile --windowed --name ConvertitoreCSV co
 ### Risoluzione problemi build su Windows
 
 - Se vedi errori `meson`/`vswhere.exe` durante l'installazione di `pandas`, significa che `pip` sta tentando una compilazione da sorgente.
-- Con le dipendenze attuali, usa preferibilmente Python 3.10-3.12 oppure aggiorna `pip` e riprova con lo script.
+- Se il tuo Python non trova `pandas==2.2.x`, usa il vincolo presente in `requirements.txt` (`pandas>=2.3.3,<3.0`) e riprova.
 - Lo script usa `python -m PyInstaller`, quindi non dipende da `pyinstaller` nel `PATH`.
 
 ## Note sulla conversione
