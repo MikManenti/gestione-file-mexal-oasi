@@ -29,7 +29,7 @@ class ConverterApp:
 
         mode_check = tk.Checkbutton(
             self.root,
-            text="Scenario 1 - Bolla Mexal (TXT a lunghezza fissa)",
+            text="Scenario 1 - Bolla Mexal (file a lunghezza fissa)",
             variable=self.mexal_mode_var,
             font=("Segoe UI", 10, "bold"),
         )
@@ -75,7 +75,7 @@ class ConverterApp:
 
         hint = tk.Label(
             self.root,
-            text="Bolla Mexal usa TXT. Volantino (Copreweb) usa Excel e produce CSV con colonne I e Y.",
+            text="Bolla Mexal legge file a lunghezza fissa. Volantino (Copreweb) usa Excel e produce CSV con colonne I e Y.",
             font=("Segoe UI", 9, "italic"),
             fg="#444",
         )
@@ -224,7 +224,7 @@ class ConverterApp:
 
     def choose_file(self) -> None:
         if self.mexal_mode_var.get():
-            filetypes = [("Text files", "*.txt")]
+            filetypes = [("All files", "*.*")]
         elif self.copreweb_mode_var.get():
             filetypes = [("Excel files", "*.xls *.xlsx")]
         else:
