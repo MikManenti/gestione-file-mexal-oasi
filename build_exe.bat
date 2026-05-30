@@ -13,7 +13,7 @@ if errorlevel 1 goto :error
 python -m pip install --upgrade pip
 if errorlevel 1 goto :error
 
-python -m pip install --only-binary=:all: -r requirements.txt
+python -m pip install -r requirements.txt
 if errorlevel 1 goto :error
 
 REM Build .exe singolo senza console
