@@ -154,7 +154,7 @@ class ConverterApp:
             field_2 = self._format_currency_value(raw_field_2)
             raw_field_3 = self._slice_1_based(line, 104, 113).strip()
             field_3 = self._format_numeric_value(raw_field_3)
-            rows.append([field_1, field_2, field_3])
+            rows.append([field_1, field_3, field_2])
 
         with open(out_file, "w", encoding="utf-8", newline="") as f:
             writer = csv.writer(f, delimiter=";", quoting=csv.QUOTE_MINIMAL)
